@@ -1,0 +1,14 @@
+.left-btn, .right-btn {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+.left-btn {
+  margin: 0 35px 0 0;
+}
+
+.right-btn {
+  margin: 0 0 0 35px;
+}
+
