@@ -2,7 +2,7 @@ import React from 'react';
 import LoadingIcon from './loading.gif';
 
 const withLoadIndicator = (Component) => {
-  class NewComponent = (props) => {
+  const NewComponent = (props) => {
     if (props.value) {
       return <Component {...props} />;
     } else {
