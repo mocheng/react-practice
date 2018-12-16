@@ -6,7 +6,7 @@ const getUserName = () => {
 }
 
 const withLogin = (Component) => {
-  class NewComponent = (props) => {
+  const NewComponent = (props) => {
     const userName= getUserName();
     if (userName) {
       return <Component {...props} userName={userName}/>;
@@ -19,7 +19,7 @@ const withLogin = (Component) => {
 };
 
 const withLoginAndLogout = (ComponentForLogin, ComponentForLogout) => {
-  class NewComponent = (props) => {
+  const NewComponent = (props) => {
     if (getUserName()) {
       return <ComponentForLogin {...props} />;
     } else {
