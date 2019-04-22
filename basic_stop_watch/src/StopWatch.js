@@ -25,32 +25,38 @@ class StopWatch extends React.Component {
     startTime: null,
     currentTime: null,
     splits: [],
+    offsetTime: 0
   }
 
   onStart = () => {
     this.setState({
       isStarted: true,
-      startTime: new Date(),
-      currentTime: new Date(),
+      startTime: new Date().getTime(),
+      currentTime: new Date().getTime(),
     });
 
     this.intervalHandle = setInterval(() => {
-      this.setState({currentTime: new Date()});
+      let newTime = new Date().getTime() + this.state.offsetTime;
+      this.setState({currentTime: newTime});
     }, 1000 / 60);
   }
 
   onPause = () => {
+    const offsetTime = this.state.currentTime - this.state.startTime;
     clearInterval(this.intervalHandle);
     this.setState({
       isStarted: false,
+      offsetTime
     });
   }
 
   onReset = () => {
     this.setState({
+      isStarted: false,
       startTime: null,
       currentTime: null,
       splits: [],
+      offsetTime: 0
     });
   }
 
