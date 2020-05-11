@@ -19,7 +19,7 @@ const Auth= (props) => {
       </React.Fragment>
     );
   } else {
-    <React.Fragment>
+    return <React.Fragment>
       {props.nologout(props)}
     </React.Fragment>
   }
