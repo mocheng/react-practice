@@ -30,7 +30,7 @@ class StopWatch extends React.Component {
   onStart = () => {
     this.setState({
       isStarted: true,
-      startTime: new Date(),
+      startTime: new Date() - this.state.currentTime - this.state.startTime,
       currentTime: new Date(),
     });
 
